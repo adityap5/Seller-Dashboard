@@ -1,3 +1,4 @@
+import Display from "./pages/Display"
 import SellerInput from "./pages/SellerInput"
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
   return (
     <>
       <SellerInput/>
+      <Display/>
     </>
   )
 }

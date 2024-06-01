@@ -3,7 +3,7 @@ const uniqid = require('uniqid')
 
 
 const productSchema = new mongoose.Schema({
-    id: {type: String, default: uniqid()},
+    id: {type: String,default: () => uniqid()},
     name: {type: String, required: true},
     price: {type: Number, required: true},
     description: {type: String, required: true},
@@ -11,7 +11,6 @@ const productSchema = new mongoose.Schema({
     category: {type: String, required: true},
     quantity: {type: Number, required: true},
     rating: {type: Number, required: true},
-    reviews: {type: Array, required: true},
     date: {type: Date, default: Date.now}
 
 

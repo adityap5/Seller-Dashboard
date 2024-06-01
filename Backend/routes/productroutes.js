@@ -4,9 +4,9 @@ const Product = require('../models/products')
 
 
 router.post('/',async (req,res)=>{
-    const {name, price, description, image, category, quantity, rating, reviews} = req.body;
+    const {name, price, description, image, category, quantity, rating} = req.body;
     try {
-        const product = new Product({name, price, description, image, category, quantity, rating,reviews});
+        const product = new Product({name, price, description, image, category, quantity, rating});
         await product.save();
         res.status(201).json(product);
     } catch (error) {
