@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const uniqid = require('uniqid')
 
 
-const product = new mongoose.Schema({
-    _id: {type: String, default: uniqid()},
+const productSchema = new mongoose.Schema({
+    id: {type: String, default: uniqid()},
     name: {type: String, required: true},
     price: {type: Number, required: true},
     description: {type: String, required: true},
@@ -17,4 +17,4 @@ const product = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('Product', product)
+module.exports = mongoose.model('Product', productSchema)
