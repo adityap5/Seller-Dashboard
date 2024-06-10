@@ -1,12 +1,15 @@
+import Navigation from "./components/Navigation";
 import Display from "./pages/Display"
-import SellerInput from "./pages/SellerInput"
+import { Outlet } from 'react-router-dom'
+import SellerInput from "./pages/SellerInput";
 
 function App() {
 
   return (
     <>
-      <SellerInput/>
-      <Display/>
+    <Navigation/>
+    <Outlet/> 
+    <SellerInput/>
     </>
   )
 }

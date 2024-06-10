@@ -1,19 +1,20 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const productroute = require('./routes/productroutes');
 const authRoutes = require('./routes/auth');
 
-
-mongoose.connect('mongodb://localhost:27017/Sellerdashboard');
+dotenv.config();
+mongoose.connect(process.env.MONGO_DB);
 
 const app = express()
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 8000;
+const PORT = 8000 || process.env.PORT;
 
 const db = mongoose.connection;
 db.once('open', () => console.log('Connected to MongoDB'));

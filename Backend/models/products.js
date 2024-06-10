@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
-const uniqid = require('uniqid')
+
 
 
 const productSchema = new mongoose.Schema({
-    id: {type: String,default: () => uniqid()},
     name: {type: String, required: true},
     price: {type: Number, required: true},
     description: {type: String, required: true},
