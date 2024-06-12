@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx'
 import Login from './pages/Login.jsx'
 import Display from './pages/Display.jsx'
 import SellerInput from './pages/SellerInput.jsx'
+import ProductPage from './pages/ProductPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +18,7 @@ const router = createBrowserRouter(
         <Route path="/login" element={<Login />}/>
         <Route path="/admin" element={<SellerInput />}/>
         <Route path="/products" element={<Display />}/>
-        <Route path="/:id" element={<Display />}/>
+        <Route path="/products/:id" element={<ProductPage />} />
 
     </Route>
   )
