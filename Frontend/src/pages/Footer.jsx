@@ -4,7 +4,7 @@ import React from 'react'
 function Footer() {
     return (
         <div className="" >
-            <Grid className="bg-black text-white texxt-center mt-10 pl-20"
+            <Grid className="bg-black text-white text-center mt-10"
                 container
                 sx={{ bgcolor: "black", color: "white", py: 3 }}
             >
