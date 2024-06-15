@@ -7,7 +7,6 @@ export function Logout() {
       localStorage.removeItem('token'); 
       navigate("/login");
     };
-
   return (
     <button onClick={handleLogout} className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
       Logout

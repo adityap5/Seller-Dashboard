@@ -21,7 +21,7 @@ export default function Login() {
       localStorage.setItem('token', response.data.token);
       navigate("/products")
     } catch (error) {
-      console.error('Error registering User:', error.message);
+      console.error('Error login User:', error.message);
     }
   }
   
@@ -90,7 +90,7 @@ export default function Login() {
               </button>
             </div>
           </form>
-
+          
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
             <Link to="/register" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
