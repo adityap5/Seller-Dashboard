@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -8,7 +8,8 @@ export default function ProductPage() {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const navigate = useNavigate()
+    const token = localStorage.getItem('token');
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -44,7 +45,16 @@ export default function ProductPage() {
                             <p className='text-xl mt-8'>MRP : ₹{product.price}.00</p>
                             <p className='text-zinc-400 mt-2'>incl. of taxes <br />
                                 (Also includes all applicable duties)</p>
-                            <button className='bg-white text-black py-4 px-10 rounded-2xl font-bold my-6 hover:bg-zinc-400 hover:text-white'>Add To Bag</button>
+                            <button 
+                            onClick={()=>{
+                                if (token) {
+                                    navigate("/cart")
+                                }else{
+                                    navigate("/login")
+                                    alert("Please login first")
+                                }
+                            }}
+                            className='bg-white text-black py-4 px-10 rounded-2xl font-bold my-6 hover:bg-zinc-400 hover:text-white'>Add To Bag</button>
                             <p className="text-zinc-400 ">{product.description}</p>
                             <div className='flex justify-between items-center mt-2'>
 
@@ -52,7 +62,7 @@ export default function ProductPage() {
 
                             </div>
                             <p className='mt-2'>available stock: {product.quantity}</p>
-                            <p className='mt-2'>{product.rating}⭐</p>
+                            <p className='mt-2'>{product.rating}/5⭐</p>
                         </div>
 
                     </div>

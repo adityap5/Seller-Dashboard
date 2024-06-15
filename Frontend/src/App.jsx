@@ -7,11 +7,11 @@ import Footer from "./pages/Footer";
 function App() {
 
   return (
-    <>
+    <div className="p-4">
     <Navigation/>
     <Outlet/> 
     <Footer/>
-    </>
+    </div>
   )
 }
 
