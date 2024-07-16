@@ -13,7 +13,7 @@ function SellerInput() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/products', {
+            const response = await axios.post('https://seller-dashboard-quz0.onrender.com/api/products', {
                 name,
                 price,
                 description,

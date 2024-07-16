@@ -11,7 +11,7 @@ export default function Register() {
   const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register', {
+      const response = await axios.post('https://seller-dashboard-quz0.onrender.com/api/auth/register', {
         email,
         password,
 
