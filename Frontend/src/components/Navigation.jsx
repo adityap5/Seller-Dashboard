@@ -5,7 +5,7 @@ import { AdminDashboard } from './AdminDashboard';
 
 function Navigation() {
     const token = localStorage.getItem('token');
-    const adminToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZkNmI5OWRiMDE2YjVjMmQ2ODExMWUiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxODQ0Nzg2NywiZXhwIjoxNzE4NDUxNDY3fQ.bDRCr1dDohv2xYCXy9sGUEpCleR-3Bxf4lZ10g4MJBM"
+    // const adminToken =""
     const navigate = useNavigate();
     return (
         <div className="p-6">
